@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.KehudingdanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.KehudingdanEntity" id="kehudingdanMap">
+        <result property="dingdanbianhao" column="dingdanbianhao"/>
+        <result property="yaopinbianhao" column="yaopinbianhao"/>
+        <result property="yaopinmingcheng" column="yaopinmingcheng"/>
+        <result property="yaopinzhengshiming" column="yaopinzhengshiming"/>
+        <result property="guige" column="guige"/>
+        <result property="danwei" column="danwei"/>
+        <result property="chandi" column="chandi"/>
+        <result property="shengchanriqi" column="shengchanriqi"/>
+        <result property="yaopinshuliang" column="yaopinshuliang"/>
+        <result property="yaopinshoujia" column="yaopinshoujia"/>
+        <result property="zongjine" column="zongjine"/>
+        <result property="kehumingcheng" column="kehumingcheng"/>
+        <result property="kehudianhua" column="kehudianhua"/>
+        <result property="kehudizhi" column="kehudizhi"/>
+        <result property="dengjishijian" column="dengjishijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.KehudingdanVO" >
+		SELECT * FROM kehudingdan  kehudingdan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.KehudingdanVO" >
+		SELECT  kehudingdan.* FROM kehudingdan  kehudingdan
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.KehudingdanView" >
+
+		SELECT  kehudingdan.* FROM kehudingdan  kehudingdan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.KehudingdanView" >
+		SELECT * FROM kehudingdan  kehudingdan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
